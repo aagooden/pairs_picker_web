@@ -1,6 +1,5 @@
 require "sinatra"
 require "erb"
-require "sinatra/reloader"
 
 enable :sessions
 
