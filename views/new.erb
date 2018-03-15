@@ -1,0 +1,21 @@
+
+<body background="nosepicking.jpg">
+
+	<h1>Welcome to Pairs Picker!</h1>
+
+	<form action="/pairs" method="post">
+		<input type="text" name="name" placeholder ="Enter a name" autofocus>
+		<input type="submit">
+	</form>
+
+	<form action="/show_pairs" method="get">
+		<input type="submit" value ="Get Pairings">
+	</form>
+
+	<h2><%= @name %></h2>
+	<% if @name.nil? %>
+	<% else %>
+	<h2>Is on the List!</h2>
+	<%end%>
+
+</body>
