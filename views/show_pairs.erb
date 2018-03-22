@@ -3,26 +3,33 @@
 
 <h3>Your Pairings Are:</h3>
 
-<div>
+<% session[:pairs].each do |pair|%>
+	<% pair.each do |person| %>
+	<%=person %>
+<%end%>
+<br>
+<%end%>
 
-	<% @pairs.each do |name| %>
-		<%if name.length == 2%>
-		<p><%= name[0] %>
-			and
-			<%= name[1] %>
-		</p>
-		<%else%>
-			<p><%= name[0] %>,
-			and
-			<%= name[1] %>,
-			and
-			<%= name[2] %>
-		</p>
-		<%end%>
 
+<h3>Please select the pairs you want to change.</h3>
+<br>
+<form action="/bad_pairs" method="post">
+
+
+	<% session[:pairs].each do |pair| %>
+		 <input type="checkbox" name="bad_pairs[]" value= '<%= pair %>' unchecked><% pair.each do |person|%> 
+		 		<%=person%>
+		 		<%end%> <br>
 	<% end %>
-</div>
+
+  <input type="submit" value="Re-Pair">
+</form>
 
 <form action="/pairs" method="get">
 	<input type="submit" value ="Do it Again!">
 </form>
+
+
+
+
+

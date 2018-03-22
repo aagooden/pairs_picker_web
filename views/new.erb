@@ -12,10 +12,12 @@
 		<input type="submit" value ="Get Pairings">
 	</form>
 
-	<h2><%= @name %></h2>
-	<% if @name.nil? %>
+	<% session[:names].each do |name|%>
+	
+	<% if name.nil? %>
 	<% else %>
-	<h2>Is on the List!</h2>
+	<h2><%= name %> - Is on the List!</h2>
+	<%end%>
 	<%end%>
 
 </body>
