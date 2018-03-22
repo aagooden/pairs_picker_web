@@ -7,6 +7,7 @@ enable :sessions
 
 
 get "/" do 
+	session[:message] = "Thanks for bringing people together!"
 	session[:names] = []
 	erb :new
 end
@@ -22,11 +23,15 @@ end
 get "/show_pairs" do
 	if session[:names].length == 1
 		session[:message] = "You will need at least 2 people for a pairing..."
-		redirect "/"
+		redirect "/try_again"
 	end
 	session[:names] = shuffle(session[:names])
 	session[:pairs] = return_pairs(session[:names])
 	erb :show_pairs
+end
+
+get "/try_again" do 
+	erb :new
 end
 
 post "/bad_pairs" do
