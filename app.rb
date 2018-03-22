@@ -5,7 +5,7 @@ require_relative "pairs_picker_methods.rb"
 enable :sessions
 
 
-get "/pairs" do 
+get "/" do 
 	session[:names] = []
 	erb :new
 end
