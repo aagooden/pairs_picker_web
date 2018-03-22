@@ -5,6 +5,7 @@ require_relative "pairs_picker_methods.rb"
 enable :sessions
 
 
+
 get "/" do 
 	session[:names] = []
 	erb :new
@@ -19,6 +20,10 @@ end
 
 
 get "/show_pairs" do
+	if session[:names].length == 1
+		session[:message] = "You will need at least 2 people for a pairing..."
+		redirect "/"
+	end
 	session[:names] = shuffle(session[:names])
 	session[:pairs] = return_pairs(session[:names])
 	erb :show_pairs
@@ -26,6 +31,10 @@ end
 
 post "/bad_pairs" do
 	session[:bad_pairs] = params[:bad_pairs]
+
+	if session[:bad_pairs] == nil
+		redirect "/show_pairs"
+	end
 
 #convert the "stringified" array to normal array
 	new_array = Array.new 

@@ -2,9 +2,10 @@
 <body background="nosepicking.jpg">
 
 	<h1>Welcome to Pairs Picker!</h1>
+	<p><%= session[:message]%></p>
 
 	<form action="/pairs" method="post">
-		<input type="text" name="name" placeholder ="Enter a name" autofocus>
+		<input type="text" name="name" placeholder ="Enter a name" autofocus required>
 		<input type="submit">
 	</form>
 
