@@ -21,7 +21,7 @@ end
 
 
 get "/show_pairs" do
-	if session[:names].length == 1
+	if session[:names].length == 1 || session[:names].length == 0
 		session[:message] = "You will need at least 2 people for a pairing..."
 		redirect "/try_again"
 	end
