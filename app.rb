@@ -14,17 +14,17 @@ end
 
 
 post "/pairs" do
-	name = params[:name]
-	session[:names] << name
-	erb :new
+	session[:names]=params[:name]
+	redirect "/show_pairs"
 end
 
 
 get "/show_pairs" do
-	if session[:names].length == 1 || session[:names].length == 0
-		session[:message] = "You will need at least 2 people for a pairing..."
-		redirect "/try_again"
-	end
+	p session[:names]
+	# if session[:names].length == 1 || session[:names].length == 0
+	# 	session[:message] = "You will need at least 2 people for a pairing..."
+	# 	redirect "/try_again"
+	# end
 	session[:names] = shuffle(session[:names])
 	session[:pairs] = return_pairs(session[:names])
 	erb :show_pairs

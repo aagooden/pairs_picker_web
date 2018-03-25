@@ -1,24 +1,37 @@
 
+<script type="text/javascript"> 
+
+function stopRKey(evt) { 
+  var evt = (evt) ? evt : ((event) ? event : null); 
+  var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null); 
+  if ((evt.keyCode == 13) && (node.type=="text"))  {return false;} 
+} 
+
+document.onkeypress = stopRKey; 
+
+</script>
+
 <body background="nosepicking.jpg">
 
 	<h1>Welcome to Pairs Picker!</h1>
 	<p><%= session[:message]%></p>
 
-	<form action="/pairs" method="post">
-		<input type="text" name="name" placeholder ="Enter a name" autofocus required>
-		<input type="submit">
-	</form>
 
-	<form action="/show_pairs" method="get">
+	<!-- <form action="/pairs" method="post"> -->
+	<form action="/pairs" method="post" id="input_form">
+		<input type="text" name="name[]" placeholder ="Enter a name" autofocus required>
+		<br> <br>
+		<input type="text" name="name[]" placeholder ="Enter a name" autofocus required>
+		<br>
+		<button type="button" id="submit_pairs">Add Another Name</button>
+		<br>
+		<script type="text/javascript" src="pairs.js"></script>		
+		<br>
 		<input type="submit" value ="Get Pairings">
+		<br> <br>
+	<!-- 	<input type="submit"> -->
 	</form>
 
-	<% session[:names].each do |name|%>
 	
-	<% if name.nil? %>
-	<% else %>
-	<h2><%= name %> - Is on the List!</h2>
-	<%end%>
-	<%end%>
 
 </body>

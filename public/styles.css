@@ -56,6 +56,22 @@ h1 {
 
 input[type="submit"] {
   display: inline-block;
+  background-color: red;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 100px;
+  transition: background-color 200ms ease-in-out;
+  letter-spacing: 0.05em;
+  border: none;
+  margin-top: 50px;
+}
+
+button {
+  display: inline-block;
   background-color: blue;
   color: #fff;
   text-transform: uppercase;
@@ -69,6 +85,7 @@ input[type="submit"] {
   border: none;
   margin-top: 50px;
 }
+
 a:hover,
 a:focus,
 a:active,
