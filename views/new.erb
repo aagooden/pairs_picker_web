@@ -1,5 +1,5 @@
 
-<script type="text/javascript"> 
+<!-- <script type="text/javascript"> 
 
 function stopRKey(evt) { 
   var evt = (evt) ? evt : ((event) ? event : null); 
@@ -9,29 +9,40 @@ function stopRKey(evt) {
 
 document.onkeypress = stopRKey; 
 
-</script>
+</script> -->
+
 
 <body background="nosepicking.jpg">
 
 	<h1>Welcome to Pairs Picker!</h1>
-	<p><%= session[:message]%></p>
-
-
-	<!-- <form action="/pairs" method="post"> -->
+	<h2><%= session[:message]%></h2>
 	<form action="/pairs" method="post" id="input_form">
-		<input type="text" name="name[]" placeholder ="Enter a name" autofocus required>
-		<br> <br>
-		<input type="text" name="name[]" placeholder ="Enter a name" autofocus required>
-		<br>
+		<script type="text/javascript">
+			var x = document.createElement("input");
+			x.setAttribute("type","text");
+			x.setAttribute("name","name[]");
+			x.setAttribute("placeholder","Input a Name");
+			x.setAttribute("required", "required");
+			var form = document.getElementById("input_form"); 
+			form.append(x);
+
+		</script>
+
+
 		<button type="button" id="submit_pairs">Add Another Name</button>
 		<br>
+		<br>
+		<button type="button" id="get_pairs">Get Pairs</button>
+		<br> <br>
 		<script type="text/javascript" src="pairs.js"></script>		
 		<br>
-		<input type="submit" value ="Get Pairings">
-		<br> <br>
-	<!-- 	<input type="submit"> -->
 	</form>
 
 	
 
 </body>
+
+
+
+
+
