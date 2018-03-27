@@ -15,7 +15,7 @@ function check_blanks() {
   }
 
 var submit_pairs = document.querySelector("#input_form");
-submit_pairs.addEventListener("keypress", function() {
+submit_pairs.addEventListener("keyup", function() {
 	// text_boxes = document.getElementsByClassName("input_text")
 	console.log("Total boxes " + box_counter)
   	if (check_blanks() == 0){
