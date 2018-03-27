@@ -38,6 +38,7 @@ get "/show_pairs" do
 end
 
 get "/try_again" do 
+	session[:names] = []
 	erb :new
 end
 
