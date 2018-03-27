@@ -14,7 +14,13 @@ end
 
 
 post "/pairs" do
-	session[:names]=params[:name]
+	params[:name].each do |name_var|
+		if name_var == ""
+		else
+			session[:names].push(name_var)
+		end
+	end
+	# session[:names]=params[:name]
 	if session[:names].length < 2
 		session[:message] = "You will need at least 2 people for a pairing..."
 		redirect "/try_again"
