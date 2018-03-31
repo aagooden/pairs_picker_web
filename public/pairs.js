@@ -28,7 +28,7 @@ submit_pairs.addEventListener("keydown", function() {
 	x.setAttribute("autocomplete", "off");
 	x.setAttribute("class", "input_text");
 	var form = document.getElementById("input_form"); 
-	form.append(x);
+	form.appendChild(x);
 	box_counter += 1;
 		}
 });

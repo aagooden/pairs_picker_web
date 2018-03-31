@@ -4,7 +4,7 @@ img.resize {
 }
 
 body {
-  background-color: #cfd1d3;
+  background-color: light-grey;
   font-family: "Helvetica", Arial, sans-serif;
   padding: 40px;
   text-align: center;
@@ -56,7 +56,7 @@ h1 {
 
 input[type="submit"] {
   display: inline-block;
-  background-color: red;
+  background-color: grey;
   color: #fff;
   text-transform: uppercase;
   font-weight: bold;
@@ -73,7 +73,7 @@ input[type="submit"] {
 button {
   display: inline-block;
   background-color: blue;
-  color: #fff;
+  color: white;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 12px;
