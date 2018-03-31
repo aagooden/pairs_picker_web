@@ -5,9 +5,7 @@ require_relative "pairs_picker_methods.rb"
 enable :sessions
 
 
-puts"This is a test of the emergency broadcasting system"
-
-get "/" do 
+get "/" do
 	session[:message] = "Thanks for bringing people together!"
 	session[:names] = []
 	erb :new
@@ -38,7 +36,7 @@ get "/show_pairs" do
 	erb :show_pairs
 end
 
-get "/try_again" do 
+get "/try_again" do
 	session[:names] = []
 	erb :new
 end
@@ -51,18 +49,18 @@ post "/bad_pairs" do
 	end
 
 #convert the "stringified" array to normal array
-	new_array = Array.new 
+	new_array = Array.new
 
 	session[:bad_pairs].each do |pair|
 		pair = eval(pair)
 		new_array.push(pair)
-	end	
+	end
 
 	session[:bad_pairs] = new_array
 #delete bad pairs from good pairs
 	session[:bad_pairs].each do |bad|
 	session[:pairs].each do |good|
-		
+
 			if good == bad
 				session[:pairs].delete(bad)
 			end

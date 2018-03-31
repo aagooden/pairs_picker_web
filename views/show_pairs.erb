@@ -3,13 +3,14 @@
 
 <h3>Your Pairings Are:</h3>
 
+<div class = "transbox">
 <% session[:pairs].each do |pair|%>
 	<% pair.each do |person| %>
 	<%=person %>
 <%end%>
 <br>
 <%end%>
-
+</div>
 
 <h3>Please select the pairs you want to change.</h3>
 <br>
