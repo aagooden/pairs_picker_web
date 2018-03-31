@@ -5,6 +5,7 @@ require_relative "pairs_picker_methods.rb"
 enable :sessions
 
 
+puts"This is a test of the emergency broadcasting system"
 
 get "/" do 
 	session[:message] = "Thanks for bringing people together!"
